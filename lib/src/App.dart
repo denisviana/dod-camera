@@ -20,7 +20,7 @@ class DodCameraApp extends StatelessWidget {
         primaryColorDark: Color(0xFF1e7d8c),
         accentColor: Color(0xFF00bcd4),
         brightness: Brightness.dark,
-        fontFamily: 'Didact Gothic',
+        fontFamily: 'Comfortaa',
 
         inputDecorationTheme: InputDecorationTheme(
             labelStyle: TextStyle(color: Color(0xFF00bcd4)),

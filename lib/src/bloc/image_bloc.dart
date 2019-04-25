@@ -24,11 +24,9 @@ class ImageBloc extends Bloc{
 
     await _repository.uploadImage(Request(image: base64Image))
       .then((result){
-        result.error!=null ?
-        _stateSubject.sink.add(HttpResponse(state: AppState.SUCCESSFUL, result: result)) :
-        _stateSubject.sink.add(HttpResponse(state: AppState.ERROR, error : result.error));
+        _stateSubject.sink.add(HttpResponse(state: AppState.SUCCESSFUL, result: result));
     }).catchError((error){
-        _stateSubject.sink.add(HttpResponse(state: AppState.ERROR, error : error));
+        _stateSubject.sink.add(HttpResponse(state: AppState.ERROR, error : "$error"));
     });
 
   }
