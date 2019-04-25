@@ -1,4 +1,7 @@
 
+import 'package:bloc_provider/bloc_provider.dart';
+import 'package:dod_camera/src/bloc/image_bloc_provider.dart';
+import 'package:dod_camera/src/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -37,10 +40,16 @@ class DodCameraApp extends StatelessWidget {
         MyRoutes.login: (context) => LoginScreen(),
       },
       initialRoute: MyRoutes.login,*/
-      home: Container(),
+      home: MainScreen(),
     );
 
-    return _app;
+    return BlocProviderTree(
+      blocProviders: [
+        ImageBlocProvider()
+      ],
+      child: _app,
+    );
+
   }
 
 }

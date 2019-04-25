@@ -2,23 +2,19 @@
 import 'dart:convert';
 
 import 'package:dod_camera/src/model/request.dart';
-import 'package:dod_camera/src/model/response.dart';
+import 'package:dod_camera/src/model/result.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
 
-  final String url = "https://reqres.in/api/";
+  final String url = "https://tv.dodvision.com";
 
- Future<Response> uploadImage(Request request) async{
-
-   var response = await http.post(url, body: request)
-       .then((response){
-
-         Map<String,dynamic> mapResult = jsonDecode(response.body);
-         
-         return mapResult;
+ Future<Result> uploadImage(Request request) async{
+   return await http.post("$url/test-app/", body: {'image':request.image})
+     .then((response){
+       Map<String,dynamic> mapResult = jsonDecode(response.body);
+       return Result.fromMap(mapResult);
    });
-
  }
 
 }
