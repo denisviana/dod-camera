@@ -25,7 +25,7 @@ class Localization{
 class LocalizationDelegate extends LocalizationsDelegate<Localization> {
 
   @override
-  bool isSupported(Locale locale) => ['pt','ja'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => ['pt'].contains(locale.languageCode);
 
   @override
   Future<Localization> load(Locale locale) => SynchronousFuture<Localization>(Localization(locale));

@@ -1,6 +1,7 @@
 
 import 'package:bloc_provider/bloc_provider.dart';
 import 'package:dod_camera/src/bloc/image_bloc_provider.dart';
+import 'package:dod_camera/src/common/localization.dart';
 import 'package:dod_camera/src/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -30,12 +31,14 @@ class DodCameraApp extends StatelessWidget {
         ),
       ),
       localizationsDelegates: [
+        LocalizationDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: [
         const Locale('pt', ''),
       ],
+      debugShowCheckedModeBanner: false,
       /*routes: {
         MyRoutes.login: (context) => LoginScreen(),
       },

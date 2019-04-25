@@ -24,10 +24,7 @@ class ImageScreen extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: <Widget>[
-            FadeInImage.memoryNetwork(
-                placeholder: kTransparentImage,
-                image: "https://tv.dodvision.com/$imageUrl"
-            ),
+            Image.network("https://tv.dodvision.com/$imageUrl"),
             Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(
